@@ -43,7 +43,7 @@ class BrandController extends Controller
         // If include file, upload
         $imgName = time().'.'.$request->brand_photo->extension();
 
-        $request->brand_photo->move(public_path('backend/brandimg').$imgName);
+        $request->brand_photo->move(public_path('backend/brandimg/').$imgName);
 
         $myfile = 'backend/brandimg/'.$imgName;
 

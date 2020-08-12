@@ -1,13 +1,13 @@
 @extends('backendtemplate')
 @section('content')
 <div class="container-fluid">
-	<h2 class="d-inline-block">Category List (Table)</h2>
-	<a href="{{route('categories.create')}}" class="btn btn-success float-right">Add New</a>
+	<h2 class="d-inline-block">SubCategory List (Table)</h2>
+	<a href="{{route('subcategories.create')}}" class="btn btn-success float-right">Add New</a>
 	<table class="table table-bordered">
 		<thead>
 			<tr>
 				<th>Name</th>
-				<th>Photo</th>
+				<th>Category</th>
 				<th>Action</th>
 			</tr>
 		</thead>
@@ -16,7 +16,7 @@
 				<td>Mg Mg</td>
 				<td></td>
 				<td>
-					<a href="{{route('categories.edit',1)}}"><button class="btn btn-warning">Edit</button></a>
+					<a href="{{route('subcategories.edit',1)}}"><button class="btn btn-warning">Edit</button></a>
 					<a href="#"><button class="btn btn-danger">Delete</button></a>
 				</td>
 			</tr>

@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Category;
+use App\Subcategory;
 
-class CategoryController extends Controller
+class SubcategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('backend.categories.index');
+        return view('backend.subcategories.index');
     }
 
     /**
@@ -24,7 +25,8 @@ class CategoryController extends Controller
      */
     public function create()
     {
-          return view('backend.categories.create');
+         $categories = Category::all();
+         return view('backend.categories.create',compact('categories','categories'));
     }
 
     /**
@@ -35,27 +37,20 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-          $request->validate([
-            'category_name'=>'required',
-            'category_photo'=>'required'
+        $request->validate([
+            'subcategory_name'=>'required',
+            'category'=>'required'
         ]);
 
-        // If include file, upload
-        $imgName = time().'.'.$request->category_photo->extension();
-
-        $request->category_photo->move(public_path('backend/categoryimg/').$imgName);
-
-        $myfile = 'backend/categoryimg/'.$imgName;
-
         // Data insert
-        $category = new Category;
-        $category->name = $request->category_name;
-        $category->photo = $myfile;
+        $subcategory = new Subcategory;
+        $subcategory->name = $request->item_name;
+        $subcategory->category_id = $request->category;
 
-        $category->save();
+        $subcategory->save();
 
         // Redirect
-        return redirect()->route('categories.index');
+        return redirect()->route('subcategories.index');
     }
 
     /**
@@ -66,7 +61,8 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        return view('backend.categories.show');
+        return view('backend.subcategories.show');
+
     }
 
     /**
@@ -77,7 +73,8 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        return view('backend.categories.show');
+        return view('backend.subcategories.show');
+
     }
 
     /**

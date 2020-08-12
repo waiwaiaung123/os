@@ -13,7 +13,7 @@
 		</thead>
 		<tbody>
 			<tr>
-				<td>1</td>
+				<td>Mg Mg</td>
 				<td></td>
 				<td>
 					<a href="{{route('brands.edit',1)}}"><button class="btn btn-warning">Edit</button></a>
