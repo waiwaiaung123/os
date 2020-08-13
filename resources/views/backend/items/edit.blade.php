@@ -67,7 +67,7 @@
  				<div class="form-group">
  					<label>Sub Category</label>
  					<select name="subcategory" class="form-control">
- 						<optgroup label="Choose Brand">
+ 						<optgroup label="Choose Subcategory">
  							@foreach($subcategories as $subcategory)
  							<option value="{{$subcategory->id}}"
  								@if($subcategory->id == $item->subcategory_id)

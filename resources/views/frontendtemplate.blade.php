@@ -54,21 +54,7 @@
     </div>
   </nav>
 
-  <!-- Page Content -->
-  <div class="container">
-
-    <div class="row">
-
-      <div class="col-lg-3">
-
-        <h1 class="my-4">Shop Name</h1>
-        <div class="list-group">
-          <a href="{{route('filteritem')}}" class="list-group-item">Category 1</a>
-          <a href="#" class="list-group-item">Category 2</a>
-          <a href="#" class="list-group-item">Category 3</a>
-        </div>
-
-      </div>
+  @yield('category')
       <!-- /.col-lg-3 -->
 
       @yield('content')

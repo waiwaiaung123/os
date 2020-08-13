@@ -17,12 +17,16 @@ class FrontendController extends Controller
 
     public function filteritem($value='')
     {
-    	return view('frontend.items');
+        $items = Item::orderBy('id','desc');
+        // dd($items);
+
+    	return view('frontend.items',compact('items'));
     }
 
      public function detail($id)
     {
-    	return view('frontend.detail');
+         $items = Item::orderBy('id','desc');
+    	return view('frontend.detail',compact('items'));
     }
 
      public function checkout($value='')
