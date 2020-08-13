@@ -26,7 +26,7 @@ class SubcategoryController extends Controller
     public function create()
     {
          $categories = Category::all();
-         return view('backend.categories.create',compact('categories','categories'));
+         return view('backend.subcategories.create',compact('categories','categories'));
     }
 
     /**

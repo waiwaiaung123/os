@@ -43,7 +43,7 @@ class CategoryController extends Controller
         // If include file, upload
         $imgName = time().'.'.$request->category_photo->extension();
 
-        $request->category_photo->move(public_path('backend/categoryimg/').$imgName);
+        $request->category_photo->move(public_path('backend/categoryimg/'),$imgName);
 
         $myfile = 'backend/categoryimg/'.$imgName;
 

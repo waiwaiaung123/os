@@ -13,4 +13,19 @@ Item Manage
  	-redirect ->(index)
  -show in database
 
+Brand Manage
+------------
+-create resource route =>Route::resource();
+-create controller (--resource) =>php artisan make:controller controllername --resource
+-show route list (route:list) =>php artisan route:list
+-create blades (4 for GET Methos) =>index.blade.php
+-call specified view from method => return view();
+-use store method(form action)
+	-dd()
+	-validation
+	-if include image, upload
+	-data insert
+	-redirect ->(index)
+-show in database
+
  

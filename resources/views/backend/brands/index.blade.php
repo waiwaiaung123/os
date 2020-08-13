@@ -6,6 +6,7 @@
 	<table class="table table-bordered">
 		<thead>
 			<tr>
+				<th>No</th>
 				<th>Name</th>
 				<th>Photo</th>
 				<th>Action</th>
@@ -13,6 +14,7 @@
 		</thead>
 		<tbody>
 			<tr>
+				<td>1</td>
 				<td>Mg Mg</td>
 				<td></td>
 				<td>
