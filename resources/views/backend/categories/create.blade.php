@@ -24,6 +24,6 @@
 
  				<input type="submit" name="btnsubmit" value="Create" class="btn btn-outline-primary">
 
- 			</form>
+ 	</form>
 </div>
 @endsection

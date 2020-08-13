@@ -24,7 +24,7 @@
  				</div>
  				<div class="form-group">
  					<label>Photo</label>
- 					<input type="file" name="item_photo" class="form-control-file" ><img src="{{asset($item->photo)}}">
+ 					<input type="file" name="item_photo" class="py-2 form-control-file" ><img src="{{asset($item->photo)}}" class="img-fluid w-25 h-25">
  					<input type="hidden" name="oldphoto" value="{{$item->photo}}">
  				</div>
 

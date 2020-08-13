@@ -51,10 +51,10 @@
 			</div>
 			<div class="modal-body">
 				<div class="row">
-					<div class="col-md-6">
-						<img src="" class="img-fluid w-25" id="photo">
+					<div class="col-md-4">
+						<img src="" class="img-fluid " id="photo">
 					</div>
-					<div class="col-md-6">
+					<div class="col-md-8">
 						Price: <strong id="price"></strong><br>
 						Description: <strong id="desc"></strong>
 					</div>

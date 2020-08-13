@@ -3,7 +3,7 @@
 <div class="container-fluid">
 	<h2 class="d-inline-block">Brand List (Table)</h2>
 	<a href="{{route('brands.create')}}" class="btn btn-success float-right">Add New</a>
-	<table class="table table-bordered">
+		<table class="table table-bordered">
 		<thead>
 			<tr>
 				<th>No</th>
@@ -13,15 +13,22 @@
 			</tr>
 		</thead>
 		<tbody>
+			@php $i=1; @endphp
+			@foreach($brands as $brand)
 			<tr>
-				<td>1</td>
-				<td>Mg Mg</td>
-				<td></td>
+				<td>{{$i++}}</td>
+				<td>{{$brand->name}}</td>
+				<td><img src="{{asset($brand->photo)}}" class="img-fluid w-25 "> </td>
 				<td>
-					<a href="{{route('brands.edit',1)}}"><button class="btn btn-warning">Edit</button></a>
-					<a href="#"><button class="btn btn-danger">Delete</button></a>
+					<a href="{{route('brands.edit',$brand->id)}}"><button class="btn btn-warning">Edit</button></a>
+					<form method="POST" action="{{route('brands.destroy',$brand->id)}}" onsubmit="return confirm('Are you sure ?')" class="d-inline-block">
+						@csrf
+						@method('DELETE')
+						<input type="submit" name="btnsubmit" value="Delete" class="btn btn-danger">
+					</form>
 				</td>
 			</tr>
+			@endforeach
 		</tbody>
 	</table>
 </div>

@@ -12,8 +12,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/','FrontendController@home')->name('homepage');
 
-Route::get('/','BackendController@dashboard')->name('dashboard');
+Route::get('dashboard','BackendController@dashboard')->name('dashboard');
 
 Route::resource('items','ItemController');
 // 7 (get- 4 / post- 1 / put- 1 / delete- 1)
@@ -23,3 +24,18 @@ Route::resource('brands','BrandController');
 Route::resource('categories','CategoryController');
 
 Route::resource('subcategories','SubcategoryController');
+
+Route::get('filteritem','FrontendController@filteritem')->name('filteritem');
+
+Route::get('detail/{id}','FrontendController@detail')->name('detail');
+
+Route::get('checkout','FrontendController@checkout')->name('checkout');
+
+Route::get('login','FrontendController@login')->name('login');
+
+Route::get('profile','FrontendController@profile')->name('profile');
+
+Route::get('register','FrontendController@register')->name('register');
+
+
+

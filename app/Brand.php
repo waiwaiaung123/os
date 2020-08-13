@@ -10,4 +10,9 @@ class Brand extends Model
         'name', 'photo'
     ];
 
+    public function items($value='')
+    {
+    	return $this->hasMany('App\Item');
+    }
+
 }
