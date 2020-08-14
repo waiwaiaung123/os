@@ -17,7 +17,7 @@ class FrontendController extends Controller
 
     public function filteritem($value='')
     {
-        $items = Item::orderBy('id','desc');
+        $items = Item::all();
         // dd($items);
 
     	return view('frontend.items',compact('items'));
@@ -25,7 +25,7 @@ class FrontendController extends Controller
 
      public function detail($id)
     {
-         $items = Item::orderBy('id','desc');
+         $items = Item::find($id);
     	return view('frontend.detail',compact('items'));
     }
 

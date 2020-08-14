@@ -12,18 +12,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// frontend---------
 Route::get('/','FrontendController@home')->name('homepage');
-
-Route::get('dashboard','BackendController@dashboard')->name('dashboard');
-
-Route::resource('items','ItemController');
-// 7 (get- 4 / post- 1 / put- 1 / delete- 1)
-
-Route::resource('brands','BrandController');
-
-Route::resource('categories','CategoryController');
-
-Route::resource('subcategories','SubcategoryController');
 
 Route::get('filteritem','FrontendController@filteritem')->name('filteritem');
 
@@ -38,4 +28,25 @@ Route::get('profile','FrontendController@profile')->name('profile');
 Route::get('register','FrontendController@register')->name('register');
 
 
+// Backend---------
+Route::middleware('auth')->group(function () {
 
+Route::resource('orders','OrderController');
+
+Route::get('dashboard','BackendController@dashboard')->name('dashboard');
+
+Route::resource('items','ItemController');
+// 7 (get- 4 / post- 1 / put- 1 / delete- 1)
+
+Route::resource('brands','BrandController');
+
+Route::resource('categories','CategoryController');
+
+Route::resource('subcategories','SubcategoryController');
+});	
+
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -11,6 +11,7 @@
 						<thead>
 							<tr>
 								<th>No.</th>
+								<th>Photo</th>
 								<th>Item Name</th>
 								<th>Price</th>
 								<th>Qty</th>
@@ -30,19 +31,28 @@
 
 			<div class="offset-md-2 col-md-8">
 				<div class="form-group">
-					<textarea class="form-control notes" placeholder="Notes"></textarea>
+					<textarea class="form-control notes" placeholder="Your Note Here!"></textarea>
 					<input type="hidden" name="" class="total">
 				</div>
 			</div>
 
 			<div class="col-md-6">
-				<a href="product.php" class="btn btn-dark">Continue Shopping</a>
+				<a href="{{route('homepage')}}" class="btn btn-dark">Continue Shopping</a>
 			</div>
+			@auth
 			<div class="col-md-6">
-				<a href='login.php' class='btn btn-dark'>Login To Buy</a>
+				<a href='#' class='btn btn-dark buy_now'>Checkout</a>
 			</div>
+			@else
+			<div class="col-md-6">
+				<a href='{{route('login')}}' class='btn btn-dark'>Login to checkout</a>
+			</div>
+			@endauth
 		</div>
 	</div>
 </div>
 
+@endsection
+@section('script')
+<script type="text/javascript" src="{{asset('frontend/js/script.js')}}"></script>
 @endsection

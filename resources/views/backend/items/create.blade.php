@@ -2,7 +2,7 @@
 @section('content')
 <div class="container-fluid">
 	<h2>Item Create (Form)</h2>
-	@if ($errors->any())
+	{{-- @if ($errors->any())
 		<div class="alert alert-danger">
 			<ul>
 				@foreach ($errors->all() as $error)
@@ -10,12 +10,15 @@
 				@endforeach
 			</ul>
 		</div>
-	@endif
+	@endif --}}
 	<form method="POST" action="{{route('items.store')}}" enctype="multipart/form-data">
 		@csrf
 				<div class="form-group">
  					<label>Code No</label>
- 					<input type="text" name="item_codeno" class="form-control">
+ 					<input type="text" name="item_codeno" class="form-control" {{$errors->first('codeno') ? 'border-danger': ''}}>
+ 					@error('codeno')
+ 					<div>{{$message}}</div>
+ 					@enderror
  				</div>
  				<div class="form-group">
  					<label>Name</label>

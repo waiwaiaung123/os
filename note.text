@@ -30,16 +30,16 @@ Brand Manage
 
 13-8-2020
 ---------
--list , edit ,delete
--validation error , delete image if upload new image
--Only brand table
+-list , edit ,delete//
+-validation error , delete image if upload new image//
+-Only brand table//
 
 -UI
 ---
- -filter item page
- -item detail page
- -checkout page
- -profile page
- -register page
- -login page
+ -filter item page//
+ -item detail page//
+ -checkout page//
+ -profile page//
+ -register page//
+ -login page//
  

@@ -18,7 +18,7 @@
 @endsection
 @section('content')
 <div class="col-lg-9">
-	<h2>Item Page Filter By Brand and Subcategory</h2>
+	<h1 class="py-4 text-center">Item Filter By Brand and Subcategory</h1>
 	
 	<div class="row">
 

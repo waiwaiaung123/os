@@ -18,7 +18,7 @@
 			<tr>
 				<td>{{$i++}}</td>
 				<td>{{$subcategory->name}}</td>
-				<td>{{$subcategory->category->id}}</td>
+				<td>{{$subcategory->category->name}}</td>
 				<td>
 					<a href="{{route('subcategories.edit',$subcategory->id)}}"><button class="btn btn-warning">Edit</button></a>
 					<form method="POST" action="{{route('subcategories.destroy',$subcategory->id)}}" onsubmit="return confirm('Are you sure ?')" class="d-inline-block">
