@@ -38,7 +38,15 @@
 
         <tr> 
           <td>Price</td> 
-          <td>{{$items->price}}</td>
+          <td>
+            ${{$items->discount}}.00
+            <del class="d-block">${{$items->price}}.00</del>
+          </td>
+        </tr>
+
+        <tr> 
+          <td>Description</td> 
+          <td>{{$items->description}}</td>
         </tr>
         
         <tr>

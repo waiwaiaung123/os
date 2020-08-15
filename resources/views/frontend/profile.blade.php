@@ -48,16 +48,17 @@
       <div class="card-body p-0">
         <!-- Nested Row within Card Body -->
         <div class="row">
-          {{-- <div class="col-lg-5 d-none d-lg-block "> --}}
-           {{--  <div class="offset-md-3 col-md-6">
-              <img src="backend/itemimg/." class="img-fluid w-100 h-100">
-           </div> --}}
-          {{-- </div> --}}
-          {{-- <div class="col-lg-7"> --}}
-          <div class="offset-md-3 col-md-6">
+          <div class="col-lg-5 d-none d-lg-block ">
+            <div class="offset-md-3 col-md-6">
+              <img src="backend/itemimg/aa.png" class="img-fluid w-100 h-100 py-5">
+              <p></p>
+           </div>
+          </div>
+          <div class="col-lg-7">
+          {{-- <div class="offset-md-3 col-md-6"> --}}
             <div class="p-5">
               <div class="text-center">
-                <h1 class="h4 text-gray-900 mb-4">Profile</h1>
+                <h1 class="h4 text-gray-900 mb-4">Edit Profile</h1>
               </div>
               <form class="user" method="POST" action="backend/singup.php" enctype="multipart/form-data">
 
@@ -89,7 +90,7 @@
                   <textarea class="form-control" placeholder="Address" name="user_address"></textarea>
                 </div>
 
-                <input type="submit" class="btn btn-primary btn-user btn-block" value="Done">
+                <input type="submit" class="btn btn-secondary btn-user btn-block" value="Save">
                  
               </form>
               <hr>
@@ -99,7 +100,7 @@
               <div class="text-center">
                 <a class="small" href="login.html">Already have an account? Login!</a> --}}
                 </div>
-              </div>
+              {{-- </div> --}}
             </div>
           </div>
         </div>
