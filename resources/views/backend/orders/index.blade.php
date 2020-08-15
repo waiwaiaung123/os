@@ -6,7 +6,7 @@
 			<div class="offset-md-2 col-md-8">
 				<h3 class="py-3">Orders</h3>
 				<div class="table-responsive">
-					<table class="table">
+					<table class="table table-bordered">
 						<thead>
 							<tr>
 								<th>VoucherNo.</th>
@@ -24,7 +24,7 @@
 							<th>{{$order->orderdate}}</th>
 							<th>{{$order->status}}</th>
 							<th>{{$order->user_id}}</th>
-							<th>{{$order->notes}}</th>
+							<th>{{$order->note}}</th>
 							<th>{{$order->total}}</th>
 							</tr>
 							@endforeach
