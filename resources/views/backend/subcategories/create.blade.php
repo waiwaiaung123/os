@@ -1,29 +1,45 @@
 @extends('backendtemplate')
 @section('content')
 <div class="container-fluid">
-	<h2>Category Create (Form)</h2>
-	@if ($errors->any())
-		<div class="alert alert-danger">
-			<ul>
-				@foreach ($errors->all() as $error)
-				<li>{{ $error }}</li>
-				@endforeach
-			</ul>
-		</div>
-	@endif
-	<form method="POST" action="{{route('categories.store')}}" enctype="multipart/form-data">
+	<h2>SubCategory Create (Form)</h2>
+	<form method="POST" action="{{route('subcategories.store')}}" enctype="multipart/form-data">
 		@csrf
- 				<div class="form-group">
- 					<label>Name</label>
- 					<input type="text" name="category_name" class="form-control">
- 				</div>
- 				<div class="form-group">
- 					<label>Photo</label>
- 					<input type="file" name="category_photo" class="form-control-file">
- 				</div>
+		<div class="form-group">
+			<label>Name</label>
+			<input type="text" name="subcategory_name" class="form-control {{$errors->first('subcategory_name') ? 'border-danger': ''}}">
+			@error('subcategory_name')
+			{{-- <div>{{$message}}</div> --}}
+			<div class="text-danger">Your codeno is required!</div>
+			@enderror
+		</div>
+		{{-- <div class="form-group">
+			<label> Category</label>
+			<select name="category" class="form-control">
+				<optgroup label="Choose Category">
+					@foreach($categories as $category)
+					<option value="{{$category->id}}"
+						@if($category->id == $subcategories->category_id)
+						{{'selected'}}
+						@endif
+						>{{$category->name}}
+					</option>
+						@endforeach
+				</optgroup>
+			</select>
+		</div> --}}
+		<div class="form-group">
+				<label>Category:</label>
+				<select name="category" class="form-control">
+					<optgroup label="Choose Category">
+						@foreach($categories as $category)
+						<option value="{{$category->id}}">{{$category->name}}</option>
+						@endforeach
+					</optgroup>
+				</select>
+			</div>
 
- 				<input type="submit" name="btnsubmit" value="Create" class="btn btn-outline-primary">
+		<input type="submit" name="btnsubmit" value="Create" class="btn btn-outline-primary">
 
- 	</form>
+	</form>
 </div>
 @endsection

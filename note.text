@@ -34,12 +34,18 @@ Brand Manage
 -validation error , delete image if upload new image//
 -Only brand table//
 
--UI
----
- -filter item page//
- -item detail page//
- -checkout page//
- -profile page//
- -register page//
- -login page//
- 
+14-08-2020
+-------
+	 -filter item page (data binding)
+	 -profile page (link /retrieve)---->
+	 -auth (multi role)
+
+Backend
+--------
+	-order retrieved-->
+	-view ->(backend/orders)folders-->
+	-create view (index.blade.php)--->
+	-show table(order list)--->
+	-OrderController / index--->
+
+	-RUD (category,subcategory)

@@ -140,7 +140,8 @@ class ItemController extends Controller
         $request->item_photo->move(public_path('backend/itemimg/'),$imgName);
 
         $myfile = 'backend/itemimg/'.$imgName;
-
+         $a=$request->oldphoto;
+         unlink($a);
         // delete old photo (unlink)
           }else{
             $myfile = $request->oldphoto;
