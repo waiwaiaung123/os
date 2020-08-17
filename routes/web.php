@@ -31,8 +31,6 @@ Route::get('register','FrontendController@register')->name('register');
 // Backend---------
 Route::middleware('role:admin')->group(function () {
 
-Route::resource('orders','OrderController');
-
 Route::get('dashboard','BackendController@dashboard')->name('dashboard');
 
 Route::resource('items','ItemController');
@@ -48,6 +46,8 @@ Route::resource('subcategories','SubcategoryController');
 
 
 Auth::routes();
+
+Route::resource('orders','OrderController');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
