@@ -47,6 +47,7 @@ Backend
 
 -create subdomain
 -enter into subdomain using SSH ssh -p 7822 username@domain.me
+-ls
 -early enter subdomain =>git clone url
 -enter into folder (cd)
 -cp .env.example .env

@@ -21,13 +21,10 @@
                         <h6>: {{$order->voucherno}}</h6>
                       </div>
                       <div class="col-md-3">
-                        <h6>Date</h6>
                         <h6>Order Date</h6>
                       </div>
                       <div class="col-md-3">
-                        <h6>: <?php $d=date('Y-m-d');?>
-                        </h6>
-                        <h6>:{{$order->created_at}} 
+                        <h6>: {{$order->created_at}}
                         </h6>
                       </div>
                     </div>
@@ -54,7 +51,7 @@
                 @endforeach
 
                 <tr>
-                  <td colspan="4">Total amoumt</td>
+                  <td colspan="3">Total amoumt</td>
                   <td>$ {{$order->total}}.00</td>
                 </tr>
               </table>
