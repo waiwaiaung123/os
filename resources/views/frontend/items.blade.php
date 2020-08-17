@@ -5,7 +5,7 @@
 
 @section('content')
 <div class="col-lg-9">
-	<h1 class="py-4 text-center">Item Filter By </h1>
+	<h1 class="py-4 text-center itemfilter">Item Filter  </h1>
 	
 	<div id="myItems" class="row">
 		
@@ -41,8 +41,8 @@
 					<p>${v.discount}.00</p
 					<p class="card-text">${v.description}</p>
 					</div>
-					<div class="card-footer">
-					<a href="#" class="btn btn-info addtocart" data-id="${v.id}" data-name="${v.name}" data-photo="${v.photo}" data-price="${v.price}" data-discount="${v.discount}">Add to Cart</a>
+					<div class="card-footer text-center
+					">
 					<a href="${url}" class="btn btn-primary">Detail</a>
 					</div>
 					</div>
@@ -54,6 +54,8 @@
 
 		$('.filter').click(function(){
 			var id= $(this).data('id');
+			var filter= $(this).data('name');
+			$('.itemfilter').text(filter);
 			showItems(id);
 		})
 	})

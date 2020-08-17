@@ -2,23 +2,12 @@
 
 @section('content')
 {{-- {{Auth::user()}} --}}
-<div class="col-lg-9">
+<div class="col-lg-12 text-center py-3">
 	<h2>Customer Profile</h2>
   <div class="container">
-    <div class="row-md-12 mt-2">
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <td>Name:</td>
-            <td>{{Auth::user()->name}}</td>
-          </tr>
-          <tr>
-            <td>Email:</td>
-            <td>{{Auth::user()->email}}</td>
-          </tr>
-        </thead>
-      </table>
-    </div>
+  	<img src="{{asset('backend/itemimg')}}" class="img-fluid">
+   <h3>Name: {{Auth::user()->name}}</h3>
+   <h3>Email: {{Auth::user()->email}}</h3>
   </div>
 </div>
 @endsection

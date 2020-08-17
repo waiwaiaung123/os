@@ -31,11 +31,11 @@
 								<th>{{$order->note}}</th>
 								<th>{{$order->total}}</th>
 								<td>
-									<a href="{{route('orders.edit',$order->id)}}"><button class="btn btn-warning">Edit</button></a>
+									<a href="{{route('orders.show',$order->id)}}"><button class="btn btn-info">Detail</button></a>
 									<form method="POST" action="{{route('orders.destroy',$order->id)}}" onsubmit="return confirm('Are you sure ?')" class="float-right">
 										@csrf
 										@method('DELETE')
-										<input type="submit" name="btnsubmit" value="Delete" class="btn btn-danger">
+										<input type="submit" name="btnsubmit" value="Confirm" class="btn btn-warning">
 									</form>
 								</td>
 							</tr>

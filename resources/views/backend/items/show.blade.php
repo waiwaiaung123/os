@@ -1,7 +1,7 @@
 @extends('backendtemplate')
 @section('content')
 <div class="container-fluid">
-	<h2>Item Detail (Your UI)</h2>
+	<h2>Item Detail </h2>
 </div>
 	<div class="container">
 		<div class="row">

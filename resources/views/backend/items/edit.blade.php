@@ -92,7 +92,7 @@
 
 				<div class="form-group">
 					<label>Description</label>
-					<textarea class="form-control {{$errors->first('item_des') ? 'border-danger': ''}}" name="item_des">{{$item->description}}"</textarea>
+					<textarea class="form-control {{$errors->first('item_des') ? 'border-danger': ''}}" name="item_des">{{$item->description}}</textarea>
 					@error('discount_price')
 					{{-- <div>{{$message}}</div> --}}
 					<div class="text-danger">Your discount price is required!</div>
