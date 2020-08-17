@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
+    //changes
     public function __construct($value='')
     {
        $this->middleware('role:admin')->except('store');
