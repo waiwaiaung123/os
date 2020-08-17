@@ -174,6 +174,7 @@ class ItemController extends Controller
     {
         $item =Item::find($id);
         $item->delete();
+        unlink($item_photo->photo);
         // redirect
         return redirect()->route('items.index');
     }

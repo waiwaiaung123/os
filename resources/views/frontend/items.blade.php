@@ -1,46 +1,63 @@
 @extends('frontendtemplate')
-@section('category')
- <!-- Page Content -->
-  <div class="container">
-
-    <div class="row">
-
-      <div class="col-lg-3">
-
-        <h1 class="my-4">Shop Name</h1>
-        <div class="list-group">
-          <a href="{{route('filteritem')}}" class="list-group-item">Category 1</a>
-          <a href="#" class="list-group-item">Category 2</a>
-          <a href="#" class="list-group-item">Category 3</a>
-        </div>
-
-      </div>
+@section('sidebar')
+@include('frontend.sidebar')
 @endsection
+
 @section('content')
 <div class="col-lg-9">
-	<h1 class="py-4 text-center">Item Filter By Brand and Subcategory</h1>
+	<h1 class="py-4 text-center">Item Filter By </h1>
 	
-	<div class="row">
-
-		@foreach($items as $item)
-		<div class="col-lg-4 col-md-6 mb-4">
-			<div class="card h-100">
-				<a href="#"><img class="card-img-top" src="{{asset($item->photo)}}" alt=""></a>
-				<div class="card-body">
-					<h4 class="card-title">
-						<a href="#">{{$item->name}}</a>
-					</h4>
-					<h5>{{$item->price}}</h5>
-					<p class="card-text">{{$item->description}}</p>
-				</div>
-				<div class="card-footer">
-					<a href="#" class="btn btn-info">Add to Cart</a>
-					<a href="{{route('detail',$item->id)}}" class="btn btn-primary">Detail</a>
-				</div>
-			</div>
-		</div>
-		@endforeach
+	<div id="myItems" class="row">
+		
 	</div>
 
 </div>
+@endsection
+
+@section('script')
+<script type="text/javascript">
+	$(document).ready(function() {
+		$.ajaxSetup({
+			headers: {
+				'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+			}
+		});
+
+		showItems(0);
+		function showItems(id){
+			$.post("{{route('getitems')}}",{sid:id},function (res) {
+				// console.log(res);
+				var html ='';
+				$.each(res,function(i,v){
+					var url ='/detail/'+v.id
+					html+=`<div class="col-lg-4 col-md-6 mb-4">
+					<div class="card h-100">
+					<a href="#"><img class="card-img-top" src="${v.photo}" alt=""></a>
+					<div class="card-body">
+					<h4 class="card-title">
+					<a href="#">${v.name}</a>
+					</h4>
+					<del>${v.price}.00</del>
+					<p>${v.discount}.00</p
+					<p class="card-text">${v.description}</p>
+					</div>
+					<div class="card-footer">
+					<a href="#" class="btn btn-info addtocart" data-id="${v.id}" data-name="${v.name}" data-photo="${v.photo}" data-price="${v.price}" data-discount="${v.discount}">Add to Cart</a>
+					<a href="${url}" class="btn btn-primary">Detail</a>
+					</div>
+					</div>
+					</div>`
+				})
+				$('#myItems').html(html);
+			})
+		}
+
+		$('.filter').click(function(){
+			var id= $(this).data('id');
+			showItems(id);
+		})
+	})
+
+</script>
+<script type="text/javascript" src="{{asset('frontend/js/script.js')}}"></script>
 @endsection

@@ -37,15 +37,8 @@ Brand Manage
 14-08-2020
 -------
 	 -filter item page (data binding)
-	 -profile page (link /retrieve)---->
-	 -auth (multi role)
+	 -profile UI
 
 Backend
 --------
-	-order retrieved-->
-	-view ->(backend/orders)folders-->
-	-create view (index.blade.php)--->
-	-show table(order list)--->
-	-OrderController / index--->
-
-	-RUD (category,subcategory)
+	-order detail

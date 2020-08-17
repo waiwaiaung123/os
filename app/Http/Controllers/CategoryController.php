@@ -136,7 +136,7 @@ class CategoryController extends Controller
         
         $category =Category::find($id);
         $category->delete();
-
+         unlink($category_photo->photo);
         // redirect
         return redirect()->route('categories.index');
     }

@@ -39,7 +39,7 @@
 			<div class="col-md-6">
 				<a href="{{route('homepage')}}" class="btn btn-dark">Continue Shopping</a>
 			</div>
-			@auth
+			@role('customer')
 			<div class="col-md-6">
 				<a href='#' class='btn btn-dark buy_now'>Checkout</a>
 			</div>
@@ -47,7 +47,7 @@
 			<div class="col-md-6">
 				<a href='{{route('login')}}' class='btn btn-dark'>Login to checkout</a>
 			</div>
-			@endauth
+			@endrole
 		</div>
 	</div>
 </div>
